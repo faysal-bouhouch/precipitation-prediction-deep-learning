@@ -4,7 +4,6 @@ Code accompanying the paper **"A Novel Multi-Pathway CNN-BiLSTM Framework for En
 
 A three-pathway CNN-BiLSTM with temporal attention, combined with a two-stage hurdle model (XGBoost rain-occurrence classifier + CNN-BiLSTM rainfall-amount regressor), for daily rainfall in the Australian Bureau of Meteorology "Rain in Australia" dataset. It trains in about 7 minutes per seed on a free Google Colab T4 GPU, within 12 GB of RAM.
 
-> Items marked **[TODO]** must be filled in or checked by the authors before publishing.
 
 ---
 
@@ -28,7 +27,7 @@ All models degrade strongly on extreme events (≥ 10 mm); see the paper for the
 
 | Step | Action |
 |---|---|
-| 1 | Open the notebook: **[TODO: Colab link]** |
+| 1 | Open the notebook: **https://colab.research.google.com/drive/1_B-EvVbgOI2CfvRyf5UJwKhuk_3CHnNB#scrollTo=Vh2gS0zuwf4A** |
 | 2 | Set the runtime to **GPU (T4)**: Runtime → Change runtime type |
 | 3 | Run the first cell to install dependencies |
 | 4 | Upload the dataset file (see section 3) or mount your Drive |
@@ -51,8 +50,8 @@ python run_pipeline.py --data data/weatherAUS.csv --seeds 42 7 123 0 17 99 2024
 |---|---|
 | Source | Australian Bureau of Meteorology daily observations ("Rain in Australia") |
 | Size | 145,460 daily records, 49 stations, 2007-2017, 23 attributes |
-| File | **[TODO: exact file name, e.g. weatherAUS.csv]** |
-| Where to get it | **[TODO: download link]**; the dataset is not redistributed here unless its licence allows it |
+| File | **weatherAUS.csv** |
+| Where to get it | http://kaggle.com/datasets/jsphyg/weather-dataset-rattle-package
 
 ---
 
@@ -92,37 +91,13 @@ python run_pipeline.py --data data/weatherAUS.csv --seeds 42 7 123 0 17 99 2024
 
 ---
 
-## 6. Repository layout
+## 6. Requirements
 
-**[TODO: adjust to your actual files]**
-
-```
-.
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── requirements.txt          # pinned versions
-├── notebooks/
-│   └── pipeline.ipynb        # Colab notebook (outputs cleared)
-├── src/                      # preprocessing, features, models, evaluation
-├── results/                  # metrics tables and figures
-└── data/                     # not committed; see section 3
-```
-
----
-
-## 7. Requirements
-
-| Item | Value |
-|---|---|
-| Python | **[TODO]** |
-| Deep learning framework | **[TODO: e.g. TensorFlow/Keras version]** |
-| Other | xgboost, lightgbm, scikit-learn, shap, pandas, numpy **[TODO: pin versions]** |
 | Hardware used | Google Colab free tier, NVIDIA T4 GPU, 12 GB RAM (peak about 8.2 GB) |
 
 ---
 
-## 8. Reproducibility notes
+## 7. Reproducibility notes
 
 - Results are reported as the mean of 7 seeds with a 95% confidence interval (t-distribution). Single-seed numbers will differ slightly.
 - GPU training is not bit-for-bit deterministic, so expect small differences even with the same seed.
@@ -130,21 +105,12 @@ python run_pipeline.py --data data/weatherAUS.csv --seeds 42 7 123 0 17 99 2024
 
 ---
 
-## 9. Citation
+## 8. Citation
 
 ```
 Bouhouch F, Riadsolh A, Ez-Zahraouy H (2026) A novel multi-pathway CNN-BiLSTM
 framework for enhanced precipitation prediction under resource constraints.
 Theoretical and Applied Climatology. [TODO: status / DOI]
-```
-
-Archived version: **[TODO: Zenodo DOI]**
-
----
-
-## 10. License
-
-**[TODO: choose, e.g. MIT]** for the code. The dataset keeps its original terms.
 
 ---
 
